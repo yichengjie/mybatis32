@@ -25,12 +25,12 @@ public class UserDaoImpl implements UserDao {
 	//通过用户ID查询一个用户
 	public User selectUserById(Integer id){
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		return sqlSession.selectOne("test.findUserById", id);
+		return sqlSession.selectOne("com.yicj.mybatis.mapper.UserMapper.findUserById", id);
 	}
 	//通过用户名称模糊查询
 	public List<User> selectUserByUsername(Integer id){
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		return sqlSession.selectList("test.findUserById", id);
+		return sqlSession.selectList("com.yicj.mybatis.mapper.UserMapper.findUserById", id);
 	}
 	
 }

@@ -6,7 +6,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<properties resource="jdbc.properties"/>
 	<!-- 别名 包以其子包下所有类   头字母大小都行-->
 	<typeAliases>
-		<package name="com.itheima.mybatis.pojo"/>
+		<package name="com.yicj.mybatis.pojo"/>
 	</typeAliases>
 	<!-- 和spring整合后 environments配置将废除    -->
 	<environments default="development">
@@ -29,6 +29,6 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<!--<mapper resource="sqlmap/User.xml" class="" url=""/> -->
 		<!--<mapper class="com.itheima.mybatis.mapper.UserMapper" /> -->
 		<!--<mapper url="" /> -->
-		<package name="com.itheima.mybatis.mapper"/>
+		<package name="com.yicj.mybatis.mapper"/>
 	</mappers>
 </configuration>

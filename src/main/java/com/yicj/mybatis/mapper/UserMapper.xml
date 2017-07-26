@@ -3,7 +3,7 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- 写Sql语句   -->
-<mapper namespace="com.itheima.mybatis.mapper.UserMapper">
+<mapper namespace="com.yicj.mybatis.mapper.UserMapper">
 	<!-- 通过ID查询一个用户 -->
 	<select id="findUserById" parameterType="Integer" resultType="User">
 		select * from user where id = #{v}
@@ -14,12 +14,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	${}    select * from user where username like '%五%'  字符串拼接  
 	
 	 -->
-	<select id="findUserByUsername" parameterType="String" resultType="com.itheima.mybatis.pojo.User">
+	<select id="findUserByUsername" parameterType="String" resultType="User">
 		select * from user where username like "%"#{haha}"%"
 	</select>
 	
 	<!-- 添加用户 -->
-	<insert id="insertUser" parameterType="com.itheima.mybatis.pojo.User">
+	<insert id="insertUser" parameterType="User">
 		<selectKey keyProperty="id" resultType="Integer" order="AFTER">
 			select LAST_INSERT_ID()
 		</selectKey>
@@ -28,7 +28,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</insert>
 	
 	<!-- 更新 -->
-	<update id="updateUserById" parameterType="com.itheima.mybatis.pojo.User">
+	<update id="updateUserById" parameterType="User">
 		update user 
 		set username = #{username},sex = #{sex},birthday = #{birthday},address = #{address}
 		where id = #{id}

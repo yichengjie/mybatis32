@@ -3,7 +3,7 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- 写Sql语句   -->
-<mapper namespace="com.itheima.mybatis.mapper.UserMapper">
+<mapper namespace="com.yicj.mybatis.sqlmap.UserMapper">
 	<!-- 通过ID查询一个用户 -->
 	<select id="findUserById" parameterType="Integer" resultType="User">
 		select * from user where id = #{v}

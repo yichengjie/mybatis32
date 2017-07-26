@@ -29,7 +29,7 @@ public class MybatisFirstTest {
 		//创建SqlSession
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		//执行Sql语句 
-		User user = sqlSession.selectOne("test.findUserById", 10);
+		User user = sqlSession.selectOne("com.yicj.mybatis.mapper.UserMapper.findUserById", 10);
 		
 		System.out.println(user);
 	}
@@ -45,7 +45,7 @@ public class MybatisFirstTest {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		
 		//执行Sql语句 
-		List<User> users = sqlSession.selectList("test.findUserByUsername", "五");
+		List<User> users = sqlSession.selectList("com.yicj.mybatis.mapper.UserMapper.findUserByUsername", "五");
 		for (User user2 : users) {
 			System.out.println(user2);
 			
@@ -68,7 +68,7 @@ public class MybatisFirstTest {
 		user.setBirthday(new Date());
 		user.setAddress("sadfsafsafs");
 		user.setSex("男");
-		sqlSession.insert("test.insertUser", user);
+		sqlSession.insert("com.yicj.mybatis.mapper.UserMapper.insertUser", user);
 		sqlSession.commit();
 		
 		System.out.println(user.getId());
@@ -92,7 +92,7 @@ public class MybatisFirstTest {
 		user.setBirthday(new Date());
 		user.setAddress("222222sadfsafsafs");
 		user.setSex("女");
-		sqlSession.update("test.updateUserById", user);
+		sqlSession.update("com.yicj.mybatis.mapper.UserMapper.updateUserById", user);
 		sqlSession.commit();
 	}
 	//删除
@@ -106,7 +106,7 @@ public class MybatisFirstTest {
 		//创建SqlSession
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		
-		sqlSession.delete("test.deleteUserById", 29);
+		sqlSession.delete("com.yicj.mybatis.mapper.UserMapper.deleteUserById", 29);
 		sqlSession.commit();
 	}
 }
